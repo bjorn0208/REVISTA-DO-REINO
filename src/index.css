@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-headline {
+    font-family: 'Cinzel', serif;
+  }
+  .font-newsreader {
+    font-family: 'Newsreader', Georgia, serif;
+  }
+  .font-sans-body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  /* Magazine column rules */
+  .col-rule {
+    column-rule: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .col-rule-dark {
+    column-rule: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Paper texture subtleties */
+.paper-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.paper-texture-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Screen mode: hide dedicated print container */
+@media screen {
+  .print-only-container {
+    display: none !important;
+  }
+}
+
+/* Print Styles for high-fidelity Magazine Export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  html, body {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only-container {
+    display: block !important;
+    visibility: visible !important;
+  }
+  .magazine-print-sheet {
+    page-break-after: always !important;
+    break-after: page !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

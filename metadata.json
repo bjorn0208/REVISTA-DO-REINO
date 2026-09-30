@@ -1,0 +1,6 @@
+{
+  "name": "MAGAZINE ARCHITECT",
+  "description": "Sistema autônomo de criação editorial premium que transforma uma foto e um contexto em uma revista de alta direção de arte.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
